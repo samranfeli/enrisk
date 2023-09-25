@@ -1,7 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import Image from 'next/image';
 import { GetStaticPropsContext, GetStaticPropsResult, GetStaticPathsResult } from 'next';
 import parse from 'html-react-parser';
 
@@ -19,7 +18,7 @@ const Sectors: React.FC<Props> = props => {
     }
     return (
         <Layout>
-            <Image 
+            <img 
                 src={sector.imageUrl} 
                 alt={sector.title} 
                 width={1600} 
