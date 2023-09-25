@@ -4,20 +4,32 @@
 
 
 @layer utilities {
-    .home-banner-height{
+    .home-banner-height {
         height: calc(100vh - 109px);
     }
-    .page-min-height{
+
+    .page-min-height {
         min-height: calc(100vh - 219px);
     }
+
     .square {
         aspect-ratio: 1 / 1;
     }
-    .banner-ratio{
+
+    .banner-ratio {
         aspect-ratio: 3 / 1;
     }
-    .base-font{
+
+    .base-font {
         font-size: 17px;
         line-height: 30px;
+    }
+
+    .top-59 {
+        top: 59px;
+    }
+
+    .top-109 {
+        top: 109px;
     }
 }

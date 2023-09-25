@@ -1,9 +1,23 @@
+import useScrollability from "@/context";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
 
-    const router = useRouter();
+    const { asPath } = useRouter();
+
+    const context = useScrollability();
+
+    const [isNavVisible, setNavVisible] = useState<boolean>(false);
+
+    useEffect(() => {
+        context.setScrollable(!isNavVisible);
+    }, [isNavVisible]);
+
+    useEffect(() => {
+        setNavVisible(false);
+    }, [asPath]);
 
     const servicesLinks = [
         {
@@ -49,28 +63,82 @@ export default function Navigation() {
             "url": "/sectors/transportation-infrastructures",
         }
     ];
-    
+    const contactLinks = [
+        {
+            "title": "Irvine, United States",
+            "url": "/contacts/irvine-united-states",
+        },
+        {
+            "title": "Houston, United States",
+            "url": "/contacts/houston-united-states",
+        },
+        {
+            "title": "Washington, D.C., United States",
+            "url": "/contacts/washington-d-c-united-states",
+        },
+        {
+            "title": "United Kingdom",
+            "url": "/contacts/united-kingdom",
+        },
+        {
+            "title": "Oman",
+            "url": "/contacts/oman",
+        },
+        {
+            "title": "Ecuador",
+            "url": "/contacts/ecuador",
+        },
+        {
+            "title": "Canada",
+            "url": "/contacts/canada",
+        }
+    ]
 
-    const NavLinkclassNames = (href:string) => `py-3 px-6 transition-all lg:hover:bg-red-600 lg:hover:text-white flex items-center h-full font-semibold lg:group-hover:bg-red-600 lg:group-hover:text-white ${href === router.asPath ? "lg:bg-red-600 lg:text-white":""}`;
+    const navLinkClassNames = (href: string) => `block py-2 px-3 lg:py-3 lg:px-6 transition-all lg:hover:bg-red-600 lg:hover:text-white lg:flex items-center lg:h-full font-semibold lg:group-hover:bg-red-600 lg:group-hover:text-white ${href === asPath ? "lg:bg-red-600 lg:text-white" : ""}`;
+    const submenuWrapperClassNames = (rightAlign: boolean = false) => `mb-4 lg:absolute lg:top-full ${rightAlign ? "lg:right-0" : "lg:left-0"} lg:w-56 lg:bg-red-600 lg:text-white lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100 lg:mt-5 lg:group-hover:mt-0 transition-all`;
+    const submenuNavLinkClassName = "block pl-10 py-2 px-3 lg:py-3 lg:pl-3 transition-all hover:bg-black/25";
+
+    const menuIconBarClassNames = "h-0.5 w-full bg-stone-600 absolute origin-left left-0 right-0 transition-all"
 
     return (
-        <nav className="lg:flex z-10 items-stretch leading-5">
-            <Link href="/" className={NavLinkclassNames("/")} >Home</Link>
-            <Link href="/about" className={NavLinkclassNames("/about")} >About</Link>
-            <div className="group relative">
-                <Link href="/services" className={NavLinkclassNames("/services")} >Services</Link>
-                <div className="lg:absolute lg:top-full lg:left-0 lg:w-56 bg-red-600 text-white lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100 lg:mt-5 lg:group-hover:mt-0 transition-all">
-                    {servicesLinks.map(service => <Link key={service.title} href={service.url} className="block p-3 transition-all hover:bg-black/25" > {service.title} </Link>)}
+        <>
+            <button
+                type="button"
+                onClick={() => { setNavVisible(prevState => !prevState) }}
+                className="lg:hidden relative w-8 h-6 flex flex-col justify-center"
+            >
+                <div className={`${menuIconBarClassNames} top-0 ${isNavVisible ? "rotate-45" : "rotate-0"}`} />
+                <div className={`h-0.5 w-full bg-stone-600 ${isNavVisible ? "opacity-0" : "opacity-100"}`} />
+                <div className={`${menuIconBarClassNames} bottom-0 ${isNavVisible ? "-rotate-45" : "rotate-0"}`} />
+            </button>
+            <div
+                className={`fixed z-10 bg-black/75 w-screen top-59 md:top-109 right-0 ${isNavVisible ? "visibility-visible opacity-100" : "visibility-hidden opacity-0"} transition-all bottom-0 lg:hidden`}
+                onClick={() => { setNavVisible(false) }}
+            />
+            <nav className={`fixed z-20 overflow-auto lg:overflow-visible bg-white w-3/4 lg:w-auto top-59 md:top-109 right-0 ${isNavVisible ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 transition-all bottom-0 lg:bg-transparent lg:static lg:flex items-stretch leading-5`}>
+                <Link href="/" className={navLinkClassNames("/")} >Home</Link>
+                <Link href="/about" className={navLinkClassNames("/about")} >About</Link>
+                <div className="group relative">
+                    <Link href="/services" className={navLinkClassNames("/services")} >Services</Link>
+                    <div className={submenuWrapperClassNames()}>
+                        {servicesLinks.map(service => <Link key={service.title} href={service.url} className={submenuNavLinkClassName} > {service.title} </Link>)}
+                    </div>
                 </div>
-            </div> 
-            <div className="group relative">
-                <Link href="/sectors" className={NavLinkclassNames("/sectors")} >Sectors</Link>
-                <div className="lg:absolute lg:top-full lg:left-0 lg:w-56 bg-red-600 text-white lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100 lg:mt-5 lg:group-hover:mt-0 transition-all">
-                    {sectorsLinks.map(sector => <Link key={sector.title} href={sector.url} className="block p-3 transition-all hover:bg-black/25" > {sector.title} </Link>)}
+                <div className="group relative">
+                    <Link href="/sectors" className={navLinkClassNames("/sectors")} >Sectors</Link>
+                    <div className={submenuWrapperClassNames()}>
+                        {sectorsLinks.map(sector => <Link key={sector.title} href={sector.url} className={submenuNavLinkClassName} > {sector.title} </Link>)}
+                    </div>
                 </div>
-            </div>
+                <div className="group relative">
+                    <Link href="/sectors" className={navLinkClassNames("/contacts")} >Contacts</Link>
+                    <div className={submenuWrapperClassNames(true)}>
+                        {contactLinks.map(contact => <Link key={contact.title} href={contact.url} className={submenuNavLinkClassName} > {contact.title} </Link>)}
+                    </div>
+                </div>
 
-            
-        </nav>
+
+            </nav>
+        </>
     )
 }
