@@ -19,7 +19,15 @@ const Services: React.FC<Props> = props => {
     }
     return (
         <Layout>
-            <Image src={service.imageUrl} alt={service.title} width={1600} height={900} className='w-full lg:banner-ratio lg:object-cover lg:object-center' />
+            <Image 
+                src={service.imageUrl} 
+                alt={service.title} 
+                width={1600} 
+                height={900} 
+                className='w-full lg:banner-ratio lg:object-cover lg:object-center'
+                placeholder ="blur"  
+                blurDataURL={service.thumbnailUrl}  
+            />            
             <div className='max-w-7xl mx-auto px-3 py-4 lg:py-8 sm:text-justify'>
                 <h1 className='font-bold text-xl xl:text-3xl mb-4 lg:mb-8'>{service.title}</h1>
                 {parse(service.content || "")}

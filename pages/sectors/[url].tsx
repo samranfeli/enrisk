@@ -19,7 +19,15 @@ const Sectors: React.FC<Props> = props => {
     }
     return (
         <Layout>
-            <Image src={sector.imageUrl} alt={sector.title} width={1600} height={900} className='w-full lg:banner-ratio lg:object-cover lg:object-center' />
+            <Image 
+                src={sector.imageUrl} 
+                alt={sector.title} 
+                width={1600} 
+                height={900} 
+                className='w-full lg:banner-ratio lg:object-cover lg:object-center'
+                placeholder ="blur"    
+                blurDataURL={sector.thumbnailUrl}  
+            />
             <div className='max-w-7xl mx-auto px-3 py-4 lg:py-8 sm:text-justify'>
                 <h1 className='font-bold text-xl xl:text-3xl mb-4 lg:mb-8'>{sector.title}</h1>
                 {parse(sector.content || "")}
