@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+import Image from 'next/image';
 import { GetStaticPropsContext, GetStaticPropsResult, GetStaticPathsResult } from 'next';
 import parse from 'html-react-parser';
 
@@ -18,7 +19,7 @@ const Services: React.FC<Props> = props => {
     }
     return (
         <Layout>
-            <img 
+            <Image 
                 src={service.imageUrl} 
                 alt={service.title} 
                 width={1600} 
