@@ -1,5 +1,4 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 
@@ -21,6 +20,7 @@
     }
 
     .base-font {
+        font-family: sans-serif;
         font-size: 17px;
         line-height: 30px;
     }

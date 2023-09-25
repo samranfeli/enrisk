@@ -25,7 +25,6 @@ const Sectors: React.FC<Props> = props => {
                 width={1600} 
                 height={900} 
                 className='w-full lg:banner-ratio lg:object-cover lg:object-center'
-                loading='eager'
             />
             <div className='max-w-7xl mx-auto px-3 py-4 lg:py-8 sm:text-justify'>
                 <h1 className='font-bold text-xl xl:text-3xl mb-4 lg:mb-8'>{sector.title}</h1>
