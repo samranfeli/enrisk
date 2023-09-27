@@ -51,9 +51,9 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ url: st
     const filePath = path.join(process.cwd(), 'data', 'dummy-backend-data.json');
     const jsonData = await fs.readFile(filePath);
     const data = JSON.parse(jsonData.toString());
-    const sericesData = data.services;
+    const servicesData = data.services;
 
-    const service = sericesData.find((service: Service) => service.url ===  '/services/'+ params!.url);
+    const service = servicesData.find((service: Service) => service.url ===  '/services/'+ params!.url);
 
     return {
         props: { service: service },
