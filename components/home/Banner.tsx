@@ -8,7 +8,7 @@ export default function Banner() {
         alt='EnRisk'
         width={2000}
         height={300}
-        className='md:home-banner-height md:object-cover md:object-center'
+        className='md:home-banner-height object-cover object-center home-banner-ratio'
       />
       <div className='max-w-7xl mx-auto px-3 absolute top-20 left-0 right-0 hidden md:block'>
         <Image

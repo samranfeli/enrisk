@@ -18,6 +18,9 @@
     .banner-ratio {
         aspect-ratio: 3 / 1;
     }
+    .home-banner-ratio{
+        aspect-ratio: 3/2;
+    }
 
     .base-font {
         font-family: sans-serif;
