@@ -32,4 +32,10 @@
     .top-109 {
         top: 109px;
     }
+    .h-120{
+        height: 30rem;
+    }
+}
+.text-red-600{
+    color: #ee1d23;
 }

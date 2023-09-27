@@ -72,5 +72,83 @@
             "thumbnailUrl": "/images/sectors/Transportation-Infrastructures-thumbnail.jpg",
             "content":"<div><p className='mb-4'>The common types of transportation infrastructures include roads, railways, bridges and tunnels, railway and bus stations, airports, waterways and ports.</p><p className='mb-4'>Despite robust and well-planned mega-projects, unexpected problems will emerge in various stages of these projects unless possible risks are identified and assessed beforehand.</p><p className='mb-4'>Large-scale transportation infrastructure projects also bring about numerous risks such as cost, schedule, technical, managerial, economic, or legal. Therefore, risk assessment process has become a requisite in increasing the success as well as minimizing the problems of these mega-projects.</p></div>"
         }
+    ],
+    "contacts": [
+        {
+            "title": "Irvine, United States",
+            "url": "/contacts/irvine-united-states",
+            "latitude":"33.650486",
+            "longitude":"-117.746160",
+            "tel":"+1-310-430-2820",
+            "fax":"+1-310-775-4477",
+            "email":"info@enriskconsulting.com,farshad@enriskconsulting.com",
+            "address":"3293 Spectrum, Irvine, CA 92618",
+            "resumeUrl":"/resume/Farshads-Cover-Letter-Resume.pdf",
+            "agentName":"Farshad A. Sohi, Ph.D."
+        },
+        {
+            "title": "Houston, United States",
+            "url": "/contacts/houston-united-states",
+            "latitude":"29.742357",
+            "longitude":"-95.391234",
+            "tel":"+1-832-305-0507",
+            "email":"info@enriskconsulting.com",
+            "address":"3400 Montrose Blvd, Suite 1911, Houston, Texas 77006",
+            "resumeUrl":"/resume/Hossein-Rahmati.pdf",
+            "agentName":"Hossein Rahmati, Ph.D."
+        },
+        {
+            "title": "Washington, D.C., United States",
+            "url": "/contacts/washington-d-c-united-states",
+            "latitude":"38.931300",
+            "longitude":"-77.022336",
+            "tel":"+1-202-390-7665",
+            "fax":"+1-310-775-4477",
+            "email":"info@enriskconsulting.com,amir@enriskconsulting.com",
+            "address":"2001 L Street N.W., Suite 500, Washington, DC, 20036",
+            "agentName":"Amir Kashani, Ph.D."
+        },
+        {
+            "title": "United Kingdom",
+            "url": "/contacts/united-kingdom",
+            "latitude":"51.480776",
+            "longitude":"-0.223020",
+            "tel":"+44-78-5855-5596",
+            "email":"info@enriskconsulting.com",
+            "address":"6 Rosenbank, Holtport Rd., London, SW6 6LG",
+            "resumeUrl":"/resume/Rubin-Taheri.pdf",
+            "agentName":"Rubin Taheri"
+        },
+        {
+            "title": "Oman",
+            "url": "/contacts/oman",
+            "latitude":"23.572963",
+            "longitude":"58.301709",
+            "tel":"+968-97620197",
+            "email":"info@enriskconsulting.com",
+            "address":"93 Oxygen Building, Muscat Hills, Muscat, Oman",
+            "agentName":"Amir Abedini"
+        },
+        {
+            "title": "Ecuador",
+            "url": "/contacts/ecuador",
+            "latitude":"-2.8785419998774153",
+            "longitude":"-78.97763916717378",
+            "tel":"+593-99-952-6930",
+            "email":"info@enriskconsulting.com",
+            "address":"Ave. Octavio Chacón 1-55, bloque 8, Ofc 203, Cuenca, Ecuador, EC 010150",
+            "resumeUrl":"/resume/Javier-Ordonez.pdf",
+            "agentName":"Javier Ordóñez, Ph.D."
+        },
+        {
+            "title": "Canada",
+            "url": "/contacts/canada",
+            "latitude":"43.801170",
+            "longitude":"-79.356660",
+            "tel":"+1-416-305-6260",
+            "email":"info@enriskconsulting.com",
+            "address":"27 Wellesbourne Cres, Toronto, ON M2H 1Y6",
+            "agentName":"Stephan Daghighi"
+        }
     ]
 }
