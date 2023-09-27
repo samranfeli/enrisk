@@ -21,21 +21,21 @@ type Props = {
 const Contact: React.FC<Props> = props => {
 
     const { contact } = props;
-
-    const [mapLoading, setMapLoading] = useState(false);
-
-    if (!contact) {
-        return null;
-    }
-
-    const { address, agentName, email, latitude, longitude, tel, title, fax, resumeUrl } = contact;
-
+    
     useEffect(() => {
         setMapLoading(true);
         setTimeout(() => {
             setMapLoading(false);
         }, 200);
-    }, [latitude, longitude]);
+    }, [contact?.latitude, contact?.longitude]);
+    
+    const [mapLoading, setMapLoading] = useState(false);
+    
+    if (!contact) {
+        return null;
+    }
+    
+    const { address, agentName, email, latitude, longitude, tel, title, fax, resumeUrl } = contact;
 
     const contactRowClassNames = 'flex flex-wrap mb-2 items-start';
     const contactLabelClassNames = 'grow-0 basis-32';
