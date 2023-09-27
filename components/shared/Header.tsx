@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 
 const Header: React.FC = () => {
     return (
-        <header className="bg-stone-100">
+        <header className="bg-stone-100 relative z-20">
             <div className="max-w-7xl mx-auto px-3">
                 <div className="flex justify-between items-center lg:items-stretch">
                     <Link href="/" className="p-3">

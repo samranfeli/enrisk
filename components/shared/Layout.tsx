@@ -11,7 +11,7 @@ const Layout: React.FC<PropsWithChildren> = props => {
     return (
         <div className={context.isScrollable ? "" : "h-screen overflow-hidden"}>
             <Header />
-            <main className="md:page-min-height" >
+            <main className="md:page-min-height relative z-10" >
                 {props.children}
             </main>
             <Footer />

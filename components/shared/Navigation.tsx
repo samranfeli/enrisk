@@ -112,7 +112,7 @@ export default function Navigation() {
                 <div className={`${menuIconBarClassNames} bottom-0 ${isNavVisible ? "-rotate-45" : "rotate-0"}`} />
             </button>
             <div
-                className={`fixed z-10 bg-black/75 w-screen top-59 md:top-109 right-0 ${isNavVisible ? "visibility-visible opacity-100" : "visibility-hidden opacity-0"} transition-all bottom-0 lg:hidden`}
+                className={`fixed z-10 bg-black/75 w-screen top-59 md:top-109 right-0 ${isNavVisible ? "visible opacity-100" : "invisible opacity-0"} transition-all bottom-0 lg:hidden`}
                 onClick={() => { setNavVisible(false) }}
             />
             <nav className={`fixed z-20 overflow-auto lg:overflow-visible bg-white w-3/4 lg:w-auto top-59 md:top-109 right-0 ${isNavVisible ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 transition-all bottom-0 lg:bg-transparent lg:static lg:flex items-stretch leading-5`}>
@@ -131,7 +131,7 @@ export default function Navigation() {
                     </div>
                 </div>
                 <div className="group relative">
-                    <Link href="/sectors" className={navLinkClassNames("/contacts")} >Contacts</Link>
+                    <Link href="/contacts" className={navLinkClassNames("/contacts")} >Contact</Link>
                     <div className={submenuWrapperClassNames(true)}>
                         {contactLinks.map(contact => <Link key={contact.title} href={contact.url} className={submenuNavLinkClassName} > {contact.title} </Link>)}
                     </div>
