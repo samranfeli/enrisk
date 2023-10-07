@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import Layout from '../../components/shared/Layout';
 import { Service } from '@/types';
+import { ChevronRight } from '@/components/shared/icons';
 
 type Props = {
     services: Service[]
@@ -20,24 +21,28 @@ const Services: React.FC<Props> = props => {
         <Layout>
             <div className='max-w-7xl mx-auto px-3 py-4 lg:py-8 sm:text-justify'>
                 <h1 className='font-bold text-xl xl:text-3xl mb-4 lg:mb-8 text-center'>Servises</h1>
-                <div className="sm:flex flex-wrap justify-center">
-                    {services.map(service => (
-                        <div className="p-3 lg:mb-5 shrink-0 sm:basis-1/2 lg:basis-1/3" key={service.title}>
-                            <Link href={service.url} className="relative block transition-all duration-300 xl:scale-100 xl:hover:scale-105">
-                                <Image
-                                    src={service.thumbnailUrl}
-                                    alt={service.title}
-                                    width={300}
-                                    height={100}
-                                    className="rounded-xl mb-2 mx-auto"
-                                />
-                                <h3 className="text-center font-semibold text-sky-600">
-                                    {service.title}
-                                </h3>
+                <div className="sm:flex flex-wrap">
+                    {services.map(serviceItem => (
+                        <div key={serviceItem.title} className="p-3 xl:p-4 grow-0 shrink-0 sm:basis-1/2 lg:basis-1/3">
+                            <Image 
+                                src={serviceItem.thumbnailUrl} 
+                                alt={serviceItem.title} 
+                                width={300} 
+                                height={100}
+                                className="w-full mb-3 box-shadow"
+                            />
+                            <h3 className="font-semibold text-xl leading-6 sm:text-2xl mb-3 px-4 border-l-4 border-amber-500">
+                                {serviceItem.title}
+                            </h3>
+                            <p className="leading-5 text-stone-400 mb-3">
+                                {serviceItem.shortDescription}
+                            </p>
+                            <Link href={serviceItem.url} className="relative block group text-red-700 hover:text-red-500">
+                                 Read More <ChevronRight className="w-7 h-7 inline-block fill-current relative transition-all right-2 group-hover:right-0" />
                             </Link>
                         </div>
                     ))}
-                </div>
+                </div>                
             </div>
         </Layout>
     )

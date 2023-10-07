@@ -1,33 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ChevronRight } from "../shared/icons";
 import { Service } from "@/types";
 
 const ServicesSection: React.FC<{services:Service[]}> = ({services}) => {
 
     return (
-        <section className="xl:py-20">
+        <section className="py-10 xl:py-20">
             <div className='max-w-7xl mx-auto'>
-                <div className="flex flex-wrap">
-                    {services.map((serviceItem,serviceIndex) => (
-                        <div key={serviceItem.title} className={`p-px xl:p-2 grow-0 shrink-0 ${serviceIndex<2?"basis-1/2":"basis-1/3"} lg:basis-1/5`}>
-                            <Link href={serviceItem.url} className="relative block group">
-                                <Image 
-                                    src={serviceItem.thumbnailUrl} 
-                                    alt={serviceItem.title} 
-                                    width={300} 
-                                    height={100}
-                                    className="square lg:object-center lg:object-cover w-full xl:rounded-xl"
-                                />
-                                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-center p-1 md:p-4 bg-black/50 lg:bg-black/75 xl:rounded-xl transition-all xl:opacity-0 xl:group-hover:opacity-100">
-                                    <h3 className="xl:scale-75 xl:group-hover:scale-100 xl:font-semibold text-white transition-all duration-300">
-                                        {serviceItem.title}
-                                    </h3>
-                                </div>
+                <h3 className="text-center mb-4 lg:mb-8 text-xl lg:text-2xl font-bold text-stone-400">Services We Provide</h3>
+               
+                <div className="sm:flex flex-wrap">
+                    {services.map(serviceItem => (
+                        <div key={serviceItem.title} className="p-3 xl:p-4 grow-0 shrink-0 sm:basis-1/2 lg:basis-1/3">
+                            <Image 
+                                src={serviceItem.thumbnailUrl} 
+                                alt={serviceItem.title} 
+                                width={300} 
+                                height={100}
+                                className="w-full mb-3 box-shadow"
+                            />
+                            <h3 className="font-semibold text-xl leading-6 sm:text-2xl mb-3 px-4 border-l-4 border-amber-500">
+                                {serviceItem.title}
+                            </h3>
+                            <p className="leading-5 text-stone-400 mb-3">
+                                {serviceItem.shortDescription}
+                            </p>
+                            <Link href={serviceItem.url} className="relative block group text-red-700 hover:text-red-500">
+                                 Read More <ChevronRight className="w-7 h-7 inline-block fill-current relative transition-all right-2 group-hover:right-0" />
                             </Link>
                         </div>
                     ))}
                 </div>
+                
             </div>
         </section>
     )
