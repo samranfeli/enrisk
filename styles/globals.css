@@ -7,8 +7,11 @@
         height: calc(100vh - 109px);
     }
 
+    .page-min-height-mobile {
+        min-height: calc(100vh - 123px);
+    }
     .page-min-height {
-        min-height: calc(100vh - 219px);
+        min-height: calc(100vh - 198px);
     }
 
     .square {
@@ -32,8 +35,8 @@
         top: 59px;
     }
 
-    .top-109 {
-        top: 109px;
+    .top-88 {
+        top: 88px;
     }
     .h-120{
         height: 30rem;

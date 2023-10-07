@@ -11,6 +11,8 @@ export default function Navigation() {
 
     const [isNavVisible, setNavVisible] = useState<boolean>(false);
 
+    const isHome = asPath === '/';
+
     useEffect(() => {
         context.setScrollable(!isNavVisible);
     }, [isNavVisible]);
@@ -94,7 +96,7 @@ export default function Navigation() {
         }
     ]
 
-    const navLinkClassNames = (href: string) => `block py-2 px-3 lg:py-3 lg:px-6 transition-all lg:hover:bg-red-600 lg:hover:text-white lg:flex items-center lg:h-full font-semibold lg:group-hover:bg-red-600 lg:group-hover:text-white ${href === asPath ? "lg:bg-red-600 lg:text-white" : ""}`;
+    const navLinkClassNames = (href: string) => `block py-2 px-3 lg:py-3 lg:px-6 transition-all lg:hover:bg-red-600 lg:hover:text-white lg:flex items-center lg:h-full font-semibold lg:group-hover:bg-red-600 lg:group-hover:text-white ${href === asPath ? "lg:bg-red-600 lg:text-white" : ""} ${isHome?"lg:text-white":""}`;
     const submenuWrapperClassNames = (rightAlign: boolean = false) => `mb-4 lg:absolute lg:top-full ${rightAlign ? "lg:right-0" : "lg:left-0"} lg:w-56 lg:bg-red-600 lg:text-white lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100 lg:mt-5 lg:group-hover:mt-0 transition-all`;
     const submenuNavLinkClassName = "block pl-10 py-2 px-3 lg:py-3 lg:pl-3 transition-all hover:bg-black/25";
 
@@ -112,10 +114,10 @@ export default function Navigation() {
                 <div className={`${menuIconBarClassNames} bottom-0 ${isNavVisible ? "-rotate-45" : "rotate-0"}`} />
             </button>
             <div
-                className={`fixed z-10 bg-black/75 w-screen top-59 md:top-109 right-0 ${isNavVisible ? "visible opacity-100" : "invisible opacity-0"} transition-all bottom-0 lg:hidden`}
+                className={`fixed z-10 bg-black/75 w-screen top-59 md:top-88 right-0 ${isNavVisible ? "visible opacity-100" : "invisible opacity-0"} transition-all bottom-0 lg:hidden`}
                 onClick={() => { setNavVisible(false) }}
             />
-            <nav className={`fixed z-20 overflow-auto lg:overflow-visible bg-white w-3/4 lg:w-auto top-59 md:top-109 right-0 ${isNavVisible ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 transition-all bottom-0 lg:bg-transparent lg:static lg:flex items-stretch leading-5`}>
+            <nav className={`fixed z-20 overflow-auto lg:overflow-visible bg-white w-3/4 lg:w-auto top-59 md:top-88 right-0 ${isNavVisible ? "translate-x-0" : "translate-x-full"} lg:translate-x-0 transition-all bottom-0 lg:bg-transparent lg:static lg:flex items-stretch leading-5`}>
                 <Link href="/" className={navLinkClassNames("/")} >Home</Link>
                 <Link href="/about" className={navLinkClassNames("/about")} >About</Link>
                 <div className="group relative">
@@ -132,7 +134,7 @@ export default function Navigation() {
                 </div>
                 <div className="group relative">
                     <Link href="/contacts" className={navLinkClassNames("/contacts")} >Contact</Link>
-                    <div className={submenuWrapperClassNames(true)}>
+                    <div className={submenuWrapperClassNames()}>
                         {contactLinks.map(contact => <Link key={contact.title} href={contact.url} className={submenuNavLinkClassName} > {contact.title} </Link>)}
                     </div>
                 </div>
