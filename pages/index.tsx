@@ -9,6 +9,7 @@ import SectorsSection from '@/components/home/SectorsSection';
 import { Service, Sector } from '@/types';
 import Banner from '@/components/home/Banner';
 import Intro from '@/components/home/Intro';
+import IconsSection from '@/components/home/IconsSection';
 
 type Props = {
   services: Service[];
@@ -25,6 +26,8 @@ const Home: React.FC<Props> = props => {
       <Banner />
 
       <ServicesSection services={services} />
+      
+      <IconsSection />
 
       <Intro />
 

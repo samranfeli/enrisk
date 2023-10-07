@@ -100,7 +100,7 @@ export default function Navigation() {
     const submenuWrapperClassNames = (rightAlign: boolean = false) => `mb-4 lg:absolute lg:top-full ${rightAlign ? "lg:right-0" : "lg:left-0"} lg:w-56 lg:bg-red-600 lg:text-white lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100 lg:mt-5 lg:group-hover:mt-0 transition-all`;
     const submenuNavLinkClassName = "block pl-10 py-2 px-3 lg:py-3 lg:pl-3 transition-all hover:bg-black/25";
 
-    const menuIconBarClassNames = "h-0.5 w-full bg-stone-600 absolute origin-left left-0 right-0 transition-all"
+    const menuIconBarClassNames = `h-0.5 w-full ${isHome?"bg-white":"bg-stone-600"} absolute origin-left left-0 right-0 transition-all`;
 
     return (
         <>
@@ -110,7 +110,7 @@ export default function Navigation() {
                 className="lg:hidden relative w-8 h-6 flex flex-col justify-center"
             >
                 <div className={`${menuIconBarClassNames} top-0 ${isNavVisible ? "rotate-45" : "rotate-0"}`} />
-                <div className={`h-0.5 w-full bg-stone-600 ${isNavVisible ? "opacity-0" : "opacity-100"}`} />
+                <div className={`h-0.5 w-full ${isHome?"bg-white":"bg-stone-600"} ${isNavVisible ? "opacity-0" : "opacity-100"}`} />
                 <div className={`${menuIconBarClassNames} bottom-0 ${isNavVisible ? "-rotate-45" : "rotate-0"}`} />
             </button>
             <div

@@ -1,6 +1,29 @@
 @tailwind base;
 @tailwind utilities;
+@tailwind components;
 
+@layer components {
+    .btn{
+        @apply py-3 px-10 font-semibold relative overflow-hidden transition-all box-shadow;
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+            right: -60px;
+            top: 20px;
+        }
+    }
+    .red-btn{
+        @apply bg-red-700 hover:bg-red-800 text-white;
+    }
+    .blue-btn{
+        @apply bg-sky-500 hover:bg-sky-600 text-white;
+    }
+}
 
 @layer utilities {
     .home-banner-height {
@@ -40,6 +63,9 @@
     }
     .h-120{
         height: 30rem;
+    }
+    .box-shadow{
+        box-shadow: 1px 1px 10px 0 #0000006b;
     }
 }
 .text-red-600{

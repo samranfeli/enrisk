@@ -99,11 +99,8 @@ const Contact: React.FC<Props> = props => {
                 </div>
 
                 {!!resumeUrl && (
-                    <div className={contactRowClassNames}>
-                        <label className={contactLabelClassNames} >
-                            Fax:
-                        </label>
-                        <a href={resumeUrl} download className='bg-sky-600 text-white px-6 py-1'>
+                    <div className='mt-4'>
+                        <a href={resumeUrl} download className='btn blue-btn block md:inline-block'>
                             Resume
                         </a>
                     </div>

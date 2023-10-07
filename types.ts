@@ -4,6 +4,7 @@ export type Service = {
     imageUrl: string;
     thumbnailUrl: string;
     content: string;
+    shortDescription: string;
 }
 
 export type Sector = Service;

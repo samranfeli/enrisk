@@ -2,6 +2,7 @@
     "services": [
         {
             "title": "Project Risk Assessment and Management",
+            "shortDescription":"EnRisk can help companies identify risk factors and avoid major problems in mega-projects.",
             "url": "/services/project-risk-assessment-and-management",
             "thumbnailUrl": "/images/services/project-risk-assessment-and-management-thumbnail.jpg",
             "imageUrl": "/images/services/project-risk-assessment-and-management.jpg",
@@ -9,6 +10,7 @@
         },
         {
             "title": "Reliability Analysis",
+            "shortDescription":"The emergence of reliability engineering methods along with the increased cost of oil and gas operations has changed the paradigm of maintenance technology.",
             "url": "/services/reliability-analysis",
             "thumbnailUrl": "/images/services/reliability-analysis-thumbnail.jpg",
             "imageUrl": "/images/services/reliability-analysis.jpg",
@@ -16,6 +18,7 @@
         },
         {
             "title": "Decision Analysis",
+            "shortDescription":"In mega projects, the difference between a good decision and a bad one can be the difference between a huge successful outcome and an awful disaster.",
             "url": "/services/decision-analysis",
             "thumbnailUrl": "/images/services/decision-analysis-thumbnail.jpg",
             "imageUrl": "/images/services/decision-analysis.jpg",
@@ -23,6 +26,7 @@
         },
         {
             "title": "Economic Evaluation of Contracts",
+            "shortDescription":"The results of economic evaluations of potential projects are the primary source that are used by executives to make investment decisions and negotiate contracts.",
             "url": "/services/economic-evaluation-of-contracts",
             "thumbnailUrl": "/images/services/economic-evaluation-of-contracts-thumbnail.jpg",
             "imageUrl": "/images/services/economic-evaluation-of-contracts.jpg",
@@ -30,6 +34,7 @@
         },
         {
             "title": "Training and Workshops",
+            "shortDescription":"This workshop is beneficial to individuals and teams who are responsible for building their company’s internal project risk assessment and risk management quality capabilities.",
             "url": "/services/training",
             "thumbnailUrl": "/images/services/training-thumbnail.jpg",
             "imageUrl": "/images/services/training.jpg",

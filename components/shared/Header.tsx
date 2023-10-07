@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     const isHome = asPath === '/';
 
     return (
-        <header className={`bg-stone-100 relative z-20 ${isHome ? "lg:absolute lg:bg-black/40 lg:right-0 lg:top-0 lg:left-0" : ""}`}>
+        <header className={`z-20 ${isHome ? "absolute bg-black/60 lg:bg-black/40 right-0 top-0 left-0" : "relative bg-stone-100"}`}>
             <div className="max-w-7xl mx-auto px-3">
                 <div className="lg:flex justify-between items-center">
                     <div className="flex items-center justify-between lg:justify-start lg:items-stretch">
