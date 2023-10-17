@@ -20,6 +20,7 @@ export default function IconsSection() {
 
                     {icons.map(item=>(
                         <Image 
+                            key={item.url}
                             src={item.url} 
                             alt={item.title} 
                             width={150} 
